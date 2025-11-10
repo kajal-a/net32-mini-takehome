@@ -7,6 +7,11 @@ Welcome to your net32_mini_takehome dbt project!
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
 
+## Prerequisites to run the project:
+dbt<br />
+dbt-duckdb adapter<br />
+duckdb CLI 
+
 
 ## Steps to run the project:
 Copy the target profile from sample_profile.yml to your profiles.yml 

@@ -11,19 +11,20 @@ Welcome to your net32_mini_takehome dbt project!
 ## Steps to run the project:
 Copy the target profile from sample_profile.yml to your profiles.yml 
 Run the following commands:
-    dbt deps
-    dbt seed
-    dbt run
-    dbt test
+    dbt deps<br />
+    dbt seed<br />
+    dbt run<br />
+    dbt test<br />
 
 The Part A of the assignment is materialized as tables in the project itself
 To get the results of these queries, you would need to download DuckDB CLI from here https://duckdb.org/install/?platform=macos&environment=cli
 
-Once installed open the CLI in projects terminal
-Run the following commands:
-    ./duckdb(Windows) --> To start DuckDB CLI 
-    .open dev.duckdb
-    select * from dev.main_net32_marts.daily_revenue;
-    select * from dev.main_net32_marts.top_customers;
-    select * from dev.main_net32_marts.product_performance;
+
+Once installed open the CLI in projects terminal<br />
+Run the following commands:<br />
+    ./duckdb(Windows) --> To start DuckDB CLI <br />
+    .open dev.duckdb<br />
+    select * from dev.main_net32_marts.daily_revenue;<br />
+    select * from dev.main_net32_marts.top_customers;<br />
+    select * from dev.main_net32_marts.product_performance;<br />
     .exit

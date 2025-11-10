@@ -16,3 +16,43 @@ models:
         description: number of items ordered
       - name: gross_marketplace_value
         description: marketplace price of the item
+  
+  - name: daily_revenue
+    description: Model to calculate daily revenue and 7 day rolling average revenue by order date
+    columns:
+      - name: order_date
+        description: date of order
+      - name: orders
+        description: count of orders placed on that date
+      - name: order_items 
+        description: count of order items placed on that date
+      - name: revenue
+        description: total revenue for that day
+      - name: rev_7d_avg
+        description: rolling 7 day average of revenue
+
+  - name: top_customers
+    description: Model to fetch the top 5 customers based on total revenue 
+    columns:
+      - name: customer_id
+        description: unique id of customer
+      - name: last_order_date
+        description: date of latest order 
+      - name: orders
+        description: number of orders placed
+      - name: revenue
+        description: total revenue by that customer
+
+  - name: product_performance
+    description: Model to analyze performance of each product available in the marketplace 
+    columns:
+      - name: product_id
+        description: unique id of the product 
+      - name: orders_containing
+        description: total orders containing that product 
+      - name: units_sold
+        description: total number of units sold 
+      - name: revenue
+        description: total revenue by product 
+      - name: share_of_total_revenue
+        description: share of total revenue contributed by a particular product

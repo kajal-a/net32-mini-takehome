@@ -48,7 +48,7 @@ models:
     description: staging table for parsing and cleaning up the customers seed table
     columns:
       - name: customer_id
-        description: unique id of the customer
+        description: unique id of the customer, to note - some customer_ids seem to be a negative numner 
         tests:
           - unique
           - not_null 

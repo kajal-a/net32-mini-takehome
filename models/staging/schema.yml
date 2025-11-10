@@ -1,0 +1,63 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: staging table for parsing and cleaning up orders seed table
+    columns:
+      - name: order_id
+        description: unique identifier representing each order 
+        tests:
+          - unique
+          - not_null 
+      - name: customer_id
+        description: unique identifier representing each customer 
+        tests:
+          - unique
+          - not_null
+      - name: order_ts
+        description: full timestamp when the order was placed 
+      - name: order_date
+        description: date when the order was placed
+      # this column does not exist in the seed file, commenting it so it doesn't throw error when running the project
+      # - name: order_status
+      #   description: one of the 4 statuses associated with an order (placed, shipped, delivered, cancelled)
+      #   tests:
+      #     - accepted_values:
+      #         values: ['placed', 'shipped', 'delivered', 'cancelled']
+
+  - name: stg_order_items
+    description: staging table for parsing and cleaning up order items seed table
+    columns: 
+      - name: order_id
+        description: unique identifier representing each order
+      - name: order_line_item_id
+        description: unique identifier representing each order item
+        tests:
+          - unique
+          - not_null 
+      - name: vendor_id 
+        description: unique identifier of the vendor 
+      - name: vendor_product_id
+        description: unique identifier of the product ordered from vendor 
+      - name: quantity 
+        description: number of items ordered
+      - name: gross_marketplace_value
+        description: gross item price of the product
+
+  - name: stg_customers
+    description: staging table for parsing and cleaning up the customers seed table
+    columns:
+      - name: customer_id
+        description: unique id of the customer
+        tests:
+          - unique
+          - not_null 
+      - name: is_dental
+        description: boolean flag indicated if the customer is dental or not
+      - name: first_order_at
+        description: date when the first order was placed
+      - name: lifetime_gross_merchandise_value
+        description: total gross amount of orders placed by the customer
+      - name: lifetime_orders
+        description: number of orders placed by the customer
+
